@@ -7,9 +7,16 @@ const Botao = ({ clicar, texto }) => {
 };
 
 const StatisticsLine = ({ text, value }) => (
-    <p>
-        {text} {value}
-    </p>
+    <div>
+        <table>
+            <tbody>
+                <tr>
+                    <td>{text}</td>
+                    <td>{value}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 );
 
 const Statistics = ({ good, neutral, bad, pontos }) => {
