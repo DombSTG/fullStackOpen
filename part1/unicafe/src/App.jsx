@@ -24,22 +24,26 @@ const Avg = ({ aver }) => {
 
 const Porcent = ({ posi }) => <p>positive {posi} </p>;
 
-const Statistics = ({ good, neutral, bad, all, pontos}) => {
+const Statistics = ({ good, neutral, bad, all, pontos }) => {
     const aver = all === 0 ? 0 : pontos / all;
 
     const porcent = (good / all) * 100;
 
     const retornPorcentagem = all === 0 ? 0 : porcent;
 
+    if (all === 0) {
+        return <div>Clique em um dos botões para usar a aplicação!</div>;
+    }
     return (
-    <>
-    <Totais texto="good" quant={good} />
-    <Totais texto="neutral" quant={neutral} />
-    <Totais texto="bad" quant={bad} />
-    <Total total={all} />
-    <Avg aver={aver} />
-    <Porcent posi={retornPorcentagem} />
-    </>)
+        <>
+            <Totais texto="good" quant={good} />
+            <Totais texto="neutral" quant={neutral} />
+            <Totais texto="bad" quant={bad} />
+            <Total total={all} />
+            <Avg aver={aver} />
+            <Porcent posi={retornPorcentagem} />
+        </>
+    );
 };
 
 const App = () => {
@@ -72,7 +76,13 @@ const App = () => {
             <Botao clicar={handleNeutral} texto="neutral" />
             <Botao clicar={handleBad} texto="bad" />
             <h2>statistics</h2>
-            <Statistics good={good} neutral={neutral} bad={bad} all={total} pontos={pontos}/>
+            <Statistics
+                good={good}
+                neutral={neutral}
+                bad={bad}
+                all={total}
+                pontos={pontos}
+            />
         </div>
     );
 };
