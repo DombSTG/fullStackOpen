@@ -19,6 +19,8 @@ const App = () => {
     const [selected, setSelected] = useState(0);
     const [pontos, setPontos] = useState(Array(anecdotes.length).fill(0));
 
+    
+
     const atualizaPontos = () => {
         const copia = [...pontos];
         const atualiza = (copia[selected] += 1);
@@ -30,12 +32,30 @@ const App = () => {
         setSelected(num);
     };
 
+    const maisVotado = () => {
+        let indiceMaior = 0;
+        let pontosMaior = 0
+        for (let i = 0; i < pontos.length; i++) {
+            if (pontos[i] > pontosMaior) {
+                indiceMaior = i;
+                pontosMaior = pontos[i];
+            }
+        }
+
+        return anecdotes[indiceMaior];
+    };
+
+    const teste = maisVotado();
+
     return (
         <div>
+            <h1>Anecdote of the day</h1>
             <p>{anecdotes[selected]}</p>
             <p>has {pontos[selected]} Votes</p>
             <Vote atualiza={atualizaPontos} />
             <Botao num={numAl} />
+            <h1>Anecdote with most votes</h1>
+            <p>{teste}</p>
         </div>
     );
 };
