@@ -7,16 +7,10 @@ const Botao = ({ clicar, texto }) => {
 };
 
 const StatisticsLine = ({ text, value }) => (
-    <div>
-        <table>
-            <tbody>
-                <tr>
-                    <td>{text}</td>
-                    <td>{value}</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+    <tr>
+        <td>{text}</td>
+        <td>{value}</td>
+    </tr>
 );
 
 const Statistics = ({ good, neutral, bad, pontos }) => {
@@ -31,14 +25,21 @@ const Statistics = ({ good, neutral, bad, pontos }) => {
         return <div>Clique em um dos botões para usar a aplicação!</div>;
     }
     return (
-        <>
-            <StatisticsLine text="good" value={good} />
-            <StatisticsLine text="neutral" value={neutral} />
-            <StatisticsLine text="bad" value={bad} />
-            <StatisticsLine text="all" value={total} />
-            <StatisticsLine text="average" value={aver} />
-            <StatisticsLine text="positive" value={retornPorcentagem + " %"} />
-        </>
+        <div>
+            <table>
+                <tbody>
+                    <StatisticsLine text="good" value={good} />
+                    <StatisticsLine text="neutral" value={neutral} />
+                    <StatisticsLine text="bad" value={bad} />
+                    <StatisticsLine text="all" value={total} />
+                    <StatisticsLine text="average" value={aver} />
+                    <StatisticsLine
+                        text="positive"
+                        value={retornPorcentagem + " %"}
+                    />
+                </tbody>
+            </table>
+        </div>
     );
 };
 
