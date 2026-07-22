@@ -13,3 +13,7 @@ Tenho um Anki de dev onde anoto tudo que estou aprendendo e reviso os cards todo
 - Quando eu perguntar "acertei?" ou similar, avalie meu código e diga o que está certo/errado e por quê, sem reescrever por mim.
 - Prefira respostas curtas e diretas, no estilo socrático quando fizer sentido, mas sem enrolação.
 - Pode usar ferramentas (rodar comandos, ler arquivos, git) livremente para me ajudar a entender o estado do projeto — a restrição é só sobre não fazer o trabalho de código dos exercícios por mim.
+
+## Regras para criar cards para o anki
+- **Utilize nomes genericos** - Não tenho como lembrar de uma variavel depois de 5 meses e nem entender o conceito
+- **Analise o conteúdo visto** - Analise o conteúdo que foi visto naquele chat, verifique o que tive mais dúvidas também.
